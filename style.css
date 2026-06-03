@@ -1,0 +1,244 @@
+body {
+    margin: 0;
+    padding: 40px;
+    background: #f4f7f4; 
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container, form, input, select, button, .struk, .card-preview {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #3a5522;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(156,172,136,.08); 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5343;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e0e6db;
+    border-radius: 12px;
+    outline: none;
+    transition: .3s;
+    background: #fafbfa;
+}
+
+input:focus,
+select:focus {
+    border-color: #B4C6A1;
+    box-shadow: 0 0 10px rgba(180,198,161,.4);
+}
+
+select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a5343' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+select option {
+    background-color: #ffffff;
+    color: #4a5343;
+    padding: 12px; 
+    font-size: 15px;
+}
+
+select option[value=""] {
+    color: #a0aab0;
+    font-style: italic;
+}
+
+select option:checked {
+    background-color: #E2EAD9 !important;
+    color: #5f883b !important;
+}
+
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-select-trigger {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #e0e6db;
+    border-radius: 12px;
+    background: #fafbfa;
+    color: #4a5343;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .3s;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a5343' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* Modifikasi: Trigger visual berubah ketika wrapper memiliki class .open */
+.custom-select-wrapper.open .custom-select-trigger {
+    border-color: #B4C6A1;
+    box-shadow: 0 0 10px rgba(180,198,161,.4);
+    border-radius: 12px 12px 0 0;
+}
+
+.custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #B4C6A1; 
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 10px 25px rgba(156,172,136,.12);
+    display: none;
+    z-index: 1000;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.custom-option {
+    display: block;
+    padding: 12px 14px;
+    color: #4a5343;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.custom-option:hover {
+    background-color: #E2EAD9;
+    color: #5f883b;
+}
+
+.custom-option.placeholder {
+    color: #a0aab0;
+    font-style: italic;
+}
+
+/* Modifikasi: Dropdown tampil otomatis jika wrapper berstatus .open */
+.custom-select-wrapper.open .custom-options {
+    display: block;
+}
+
+button {
+    grid-column: 1 / -1;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: #B4C6A1;
+    color: #3B4731;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    background: #9CAF88;
+    color: white;
+}
+
+#hasil {
+    margin-top: 30px;
+}
+
+.struk {
+    margin-top: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(156,172,136,.1);
+}
+
+.struk h2 {
+    color: #5f883b;
+    margin-bottom: 15px;
+}
+
+.struk hr {
+    border: none;
+    border-top: 1px solid #eef2ec;
+    margin: 10px 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.row.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5f883b;
+}
+
+.card-preview {
+    margin-top: 30px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(156,172,136,.08);
+}
+
+.card-preview h3 {
+    color: #5f883b;
+    margin-bottom: 15px;
+}
+
+.preview-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.badge {
+    background: #E2EAD9;
+    color: #5f883b;
+    padding: 6px 12px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
